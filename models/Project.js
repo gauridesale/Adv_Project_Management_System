@@ -27,7 +27,6 @@ const projectSchema = new mongoose.Schema({
     }]
 });
 
-// Create a model using the schema
 const Project = mongoose.model('Project', projectSchema);
 
 module.exports = Project;
