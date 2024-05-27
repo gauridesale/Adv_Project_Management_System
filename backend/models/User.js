@@ -1,9 +1,12 @@
+// User.js
+
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     email: {
         type: String,
@@ -16,12 +19,8 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: 'user',
-        enum: ['user', 'manager', 'admin']
-    },
-    date: {
-        type: Date,
-        default: Date.now
+        enum: ['user', 'manager', 'admin'],
+        default: 'user'
     }
 });
 
